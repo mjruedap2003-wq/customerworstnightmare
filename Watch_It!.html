@@ -1,368 +1,370 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Watch It! - Fix</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* =======================================
-           == 1. GLOBAL & RESET ==
-           ======================================= */
-        /* APLICAR FUENTES */
-        body {
-            margin: 0;
-            /* Fuente legible y moderna para el cuerpo de texto */
-            font-family: 'Open Sans', sans-serif;
-            background: #fafafa;
-            color: #222;
-        }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Watch It! - Fix</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =======================================
+           == 1. GLOBAL & RESET ==
+           ======================================= */
+        /* APLICAR FUENTES */
+        body {
+            margin: 0;
+            /* Fuente legible y moderna para el cuerpo de texto */
+            font-family: 'Open Sans', sans-serif;
+            background: #fafafa;
+            color: #222;
+        }
 
-        /* APLICAR FUENTES A TÍTULOS */
-        h1, h2, h3 {
-            /* Fuente impactante y fuerte para títulos */
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: 0.5px;
-        }
+        /* APLICAR FUENTES A TÍTULOS */
+        h1, h2, h3 {
+            /* Fuente impactante y fuerte para títulos */
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.5px;
+        }
 
-        .wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            /* AUMENTAR EL ESPACIO PARA QUE RESPIRE */
-            padding: 40px 20px; 
-        }
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            /* AUMENTAR EL ESPACIO PARA QUE RESPIRE */
+            padding: 40px 20px; 
+        }
 
-        /* 🔑 KEY RULE 1: Enable responsiveness for all images (including those in pop-ups) */
-        img {
-            max-width: 100%;
-            height: auto; 
-            /* BORDES SUAVES Y SOMBRAS COOL A IMÁGENES DENTRO DE POP UPS */
-            border-radius: 10px; 
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-        }
+        /* 🔑 KEY RULE 1: Enable responsiveness for all images (including those in pop-ups) */
+        img {
+            max-width: 100%;
+            height: auto; 
+            /* BORDES SUAVES Y SOMBRAS COOL A IMÁGENES DENTRO DE POP UPS */
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+        }
 
-        /* ===== NAVBAR CLEAN / SITE-NAV ===== */
-        .site-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 25px;
-            background: linear-gradient(to right, #ff5f9e, #8a4fff);
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 10000;
-        }
+        /* ===== NAVBAR CLEAN / SITE-NAV ===== */
+        .site-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            background: linear-gradient(to right, #ff5f9e, #8a4fff);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10000;
+        }
 
-        .site-nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+        .site-nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-        /* Desktop links */
-        .site-nav .links {
-            display: flex;
-            gap: 20px;
-        }
+        /* Desktop links */
+        .site-nav .links {
+            display: flex;
+            gap: 20px;
+        }
 
-        .site-nav .links a {
-            color: #F0F0F0; /* Initial text color, a soft white */
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s ease; /* Smooth transition for hover effect */
-        }
-        
-        /* 💡 DESKTOP HOVER EFFECT */
-        .site-nav .links a:hover {
-            color: #FFFFFF; /* Pure white when hovering */
-            text-decoration: underline;
-        }
+        .site-nav .links a {
+            color: #F0F0F0; /* Initial text color, a soft white */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease; /* Smooth transition for hover effect */
+        }
+        
+        /* 💡 DESKTOP HOVER EFFECT */
+        .site-nav .links a:hover {
+            color: #FFFFFF; /* Pure white when hovering */
+            text-decoration: underline;
+        }
 
-        /* Hamburger -> hidden on desktop */
-        .hamburger {
-            display: none;
-            background: transparent;
-            border: none;
-            font-size: 2rem;
-            cursor: pointer;
-            color: white;
-        }
+        /* Hamburger -> hidden on desktop */
+        .hamburger {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+        }
 
-        /* ===== MOBILE MODE ===== */
-        @media (max-width: 700px) {
-            /* show hamburger */
-            .hamburger {
-                display: block;
-            }
+        /* ===== MOBILE MODE ===== */
+        @media (max-width: 700px) {
+            /* show hamburger */
+            .hamburger {
+                display: block;
+            }
 
-            /* hide desktop links */
-            .site-nav .links {
-                display: none; 
-                flex-direction: column;
-                background: white;
-                padding: 15px;
-                border-radius: 12px;
-                /* SOMBRA SUAVE EN MENÚ MÓVIL */
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
-                position: absolute;
-                right: 20px;
-                top: 68px;
-                width: 65%;
-                text-align: right;
-            }
+            /* hide desktop links */
+            .site-nav .links {
+                display: none; 
+                flex-direction: column;
+                background: white;
+                padding: 15px;
+                border-radius: 12px;
+                /* SOMBRA SUAVE EN MENÚ MÓVIL */
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+                position: absolute;
+                right: 20px;
+                top: 68px;
+                width: 65%;
+                text-align: right;
+            }
 
-            /* mobile menu links */
-            .site-nav .links a {
-                color: #222; /* The color of the link in the mobile menu is dark */
-                margin: 10px 0;
-                font-size: 1.1rem;
-            }
-            
-            /* 💡 MOBILE HOVER EFFECT (for devices with a cursor) */
-            .site-nav .links a:hover {
-                color: #ff5f9e; /* Change the color of the navbar gradient when hovering */
-                text-decoration: underline;
-            }
+            /* mobile menu links */
+            .site-nav .links a {
+                color: #222; /* The color of the link in the mobile menu is dark */
+                margin: 10px 0;
+                font-size: 1.1rem;
+            }
+            
+            /* 💡 MOBILE HOVER EFFECT (for devices with a cursor) */
+            .site-nav .links a:hover {
+                color: #ff5f9e; /* Change the color of the navbar gradient when hovering */
+                text-decoration: underline;
+            }
 
-            /* show when active */
-            .site-nav .links.active {
-                display: flex;
-            }
-        }
+            /* show when active */
+            .site-nav .links.active {
+                display: flex;
+            }
+        }
 
-        /* ESTILOS ESPECÍFICOS DEL HEADER */
-        header h1 {
-            color: #8a4fff; /* Color morado fuerte de tu gradiente */
-            font-size: 2.8rem;
-            margin-bottom: 5px;
-        }
-        header h2 {
-            font-size: 1.4rem;
-            font-weight: 400;
-            opacity: 0.8;
-        }
+        /* ESTILOS ESPECÍFICOS DEL HEADER */
+        header h1 {
+            color: #8a4fff; /* Color morado fuerte de tu gradiente */
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+        }
+        header h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
 
-        /* =======================================
-           == 2. POP UP STYLE & VIDEO FIX ==
-           ======================================= */
-        
-        /* --- POPUP STYLE --- */
-        .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border-radius: 12px;
-            /* SOMBRA MÁS PRONUNCIADA PARA POP-UPS */
-            box-shadow: 0 0 25px rgba(0,0,0,0.5); 
-            padding: 20px;
-            width: 300px; /* Fixed width for desktop */
-            text-align: center;
-            z-index: 9999;
-            display: none;
-            animation: pop 0.28s ease;
-        }
-        @keyframes pop {
-            from { transform: translate(-50%,-60%); opacity: 0; }
-            to { transform: translate(-50%,-50%); opacity: 1; }
-        }
+        /* =======================================
+           == 2. POP UP STYLE & VIDEO FIX ==
+           ======================================= */
+        
+        /* --- POPUP STYLE --- */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 12px;
+            /* SOMBRA MÁS PRONUNCIADA PARA POP-UPS */
+            box-shadow: 0 0 25px rgba(0,0,0,0.5); 
+            padding: 20px;
+            width: 300px; /* Fixed width for desktop */
+            text-align: center;
+            z-index: 9999;
+            display: none;
+            animation: pop 0.28s ease;
+        }
+        @keyframes pop {
+            from { transform: translate(-50%,-60%); opacity: 0; }
+            to { transform: translate(-50%,-50%); opacity: 1; }
+        }
 
-        .chaos-btn, .close-btn {
-            margin-top: 12px;
-            padding: 8px 15px;
-            background: #ff3b3b;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            /* EFECTO HOVER PARA BOTONES */
-            transition: background 0.2s ease, transform 0.1s ease;
-        }
+        .chaos-btn, .close-btn {
+            margin-top: 12px;
+            padding: 8px 15px;
+            background: #ff3b3b;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            /* EFECTO HOVER PARA BOTONES */
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
 
-        .chaos-btn:hover, .close-btn:hover {
-            background: #cc2a2a; /* color un poco más oscuro al pasar el ratón */
-            transform: translateY(-1px); /* pequeño levantamiento */
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        /* 🔑 KEY RULE 2: RESPONSIVE VIDEO STYLE */
-        
-        /* RESPONSIVE CONTAINER 16:9 */
-        .video-container { 
-            position: relative; 
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16) - Define the height */
-            height: 0; 
-            overflow: hidden; 
-            margin-top: 30px; 
-            max-width: 900px; 
-            width: 100%; 
-            border-radius: 10px; /* Rounded edges on the container */
-            /* SOMBRA SUAVE EN EL VIDEO */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
-        }
-        
-        /* Apply absolute positioning and 100% size to VIDEO (and iframe) */
-        .video-container video, 
-        .video-container iframe { 
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%; /* Takes up the height defined by the padding-bottom of the parent */
-            border: none;
-        }
+        .chaos-btn:hover, .close-btn:hover {
+            background: #cc2a2a; /* color un poco más oscuro al pasar el ratón */
+            transform: translateY(-1px); /* pequeño levantamiento */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 🔑 KEY RULE 2: RESPONSIVE VIDEO STYLE */
+        
+        /* RESPONSIVE CONTAINER 16:9 */
+        .video-container { 
+            position: relative; 
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio (9/16) - Define the height */
+            height: 0; 
+            overflow: hidden; 
+            margin-top: 30px; 
+            max-width: 900px; 
+            width: 100%; 
+            border-radius: 10px; /* Rounded edges on the container */
+            /* SOMBRA SUAVE EN EL VIDEO */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+        }
+        
+        /* Apply absolute positioning and 100% size to VIDEO (and iframe) */
+        .video-container video, 
+        .video-container iframe { 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; /* Takes up the height defined by the padding-bottom of the parent */
+            border: none;
+        }
 
-        /* overlay to block outside clicks */
-        #overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.45);
-            z-index: 9998;
-            display: none;
-        }
+        /* overlay to block outside clicks */
+        #overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            z-index: 9998;
+            display: none;
+        }
 
-        /* Pop-up final (question) — over every other pop up */
-        #popupFinal, #popupWin {
-            z-index: 999999 !important;
-            width: 90%;
-            max-width: 420px;
-        }
+        /* Pop-up final (question) — over every other pop up */
+        #popupFinal, #popupWin {
+            z-index: 999999 !important;
+            width: 90%;
+            max-width: 420px;
+        }
 
-        /* blur global when the final pop up appears */
-        .blur-all {
-            filter: blur(6px);
-            pointer-events: none;
-            user-select: none;
-        }
+        /* blur global when the final pop up appears */
+        .blur-all {
+            filter: blur(6px);
+            pointer-events: none;
+            user-select: none;
+        }
 
-        /* mobile adjustments (FIXIG POP UP SIZE) */
-        @media (max-width: 600px) {
-            /* 🟢 CORRECTION: Use percentage of screen width for popups */
-            .popup { 
-                width: 90%; 
-                padding: 14px; 
-            }
-            
-            /* Making sure the pop ups are reactive to the mobile width */
-            #popupFinal, #popupWin { 
-                width: 90%; 
-                max-width: 320px; 
-            }
-        }
-    </style>
+        /* mobile adjustments (FIXIG POP UP SIZE) */
+        @media (max-width: 600px) {
+            /* 🟢 CORRECTION: Use percentage of screen width for popups */
+            .popup { 
+                width: 90%; 
+                padding: 14px; 
+            }
+            
+            /* Making sure the pop ups are reactive to the mobile width */
+            #popupFinal, #popupWin { 
+                width: 90%; 
+                max-width: 320px; 
+            }
+        }
+    </style>
 </head>
 <body>
 
 <nav class="site-nav">
-  <div class="logo">📺 Watch It! </div>
+  <div class="logo">📺 **Watch It!** </div>
 
-  <button class="hamburger" id="hamburger" aria-expanded="false">☰</button> <div class="links" id="mobileMenu">
-    <a href="Index.html">Index</a>
-    <a href="Pop_Ups.html">Pop Ups</a>
-    <a href="Watch_It!.html">Watch It!</a>
-  </div>
+  <button class="hamburger" id="hamburger" aria-expanded="false">☰</button> <div class="links" id="mobileMenu">
+    <a href="Index.html">Index</a>
+    <a href="Pop_Ups.html">Pop Ups</a>
+    <a href="Watch_It!.html">Watch It!</a>
+  </div>
 </nav>
 
 <div class="wrapper" id="pageContent">
-    <header style="text-align:center;"> <h1>Watch It!</h1>
-        <h2>Try watching… if you can 😈</h2>
-    </header>
+    <header style="text-align:center;"> <h1>Watch It!</h1>
+        <h2>Try watching… if you can 😈</h2>
+    </header>
 
-    <main style="display:flex; justify-content:center;">
-        <div class="video-container">
-            <video controls playsinline>
-                <source src="How to be cool.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
-            </video>
-        </div>
-    </main>
+    <main style="display:flex; justify-content:center;">
+        <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/BcBG-FuuNHI" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                Tu navegador no soporta iframes.
+            </iframe>
+        </div>
+    </main>
 
-    <footer style="text-align:center; margin:60px 0;"> <small><em>This website was created as part of the final project. <br> All content and designs are © Miguel Rueda, 2025</em></small>
-    </footer>
+    <footer style="text-align:center; margin:60px 0;"> <small><em>This website was created as part of the final project. <br> All content and designs are © Miguel Rueda, 2025</em></small>
+    </footer>
 </div>
 
 <div id="overlay"></div>
 
 <div class="popup" id="popup1">
-    <h3>WAIT! Special iPhone 17 offer 🔥</h3>
-    <img src="Iphone 17.png" alt="iPhone17"> <p>Be the first to get it (˶ᵔ ᵕ ᵔ˶)</p>
-    <button class="chaos-btn">✖ Close</button>
+    <h3>WAIT! Special iPhone 17 offer 🔥</h3>
+    <img src="Iphone 17.png" alt="iPhone17"> <p>Be the first to get it (˶ᵔ ᵕ ᵔ˶)</p>
+    <button class="chaos-btn">✖ Close</button>
 </div>
 
 <div class="popup" id="popup2">
-    <h3>Aliens are invading us!</h3>
-    <img src="Alien thumbs up .png" alt="Funny Alien"> <p>That ain't no asteroid sir, learn more to protect yoself ▄︻デ══━一💥</p>
-    <button class="chaos-btn">✖ Close</button>
+    <h3>Aliens are invading us!</h3>
+    <img src="Alien thumbs up .png" alt="Funny Alien"> <p>That ain't no asteroid sir, learn more to protect yoself ▄︻デ══━一💥</p>
+    <button class="chaos-btn">✖ Close</button>
 </div>
 
 <div class="popup" id="popup3">
-    <h3>Super Duolingo ◝(ᵔᗜᵔ)◜</h3>
-    <img src="SuperDuo.png" alt="Super Duo"> <p>Stop learning like a wuz and put some monies into it!</p>
-    <button class="chaos-btn">✖ Close</button>
+    <h3>Super Duolingo ◝(ᵔᗜᵔ)◜</h3>
+    <img src="SuperDuo.png" alt="Super Duo"> <p>Stop learning like a wuz and put some monies into it!</p>
+    <button class="chaos-btn">✖ Close</button>
 </div>
 
 <div class="popup" id="popup4">
-    <h3>Do you know why are ads good?•ᴗ•</h3>
-    <img src="Trollface computation .png" alt="Trollface"> <p>Ads are amazing because nothing says “we value your time” like interrupting you every five seconds. They keep your reflexes sharp by forcing you to hunt for microscopic X buttons, and they help you bond spiritually with your device through pure frustration. Truly, ads are the backbone of modern suffering.</p>
-    <button class="chaos-btn">✖ Close</button>
+    <h3>Do you know why are ads good?•ᴗ•</h3>
+    <img src="Trollface computation .png" alt="Trollface"> <p>Ads are amazing because nothing says “we value your time” like interrupting you every five seconds. They keep your reflexes sharp by forcing you to hunt for microscopic X buttons, and they help you bond spiritually with your device through pure frustration. Truly, ads are the backbone of modern suffering.</p>
+    <button class="chaos-btn">✖ Close</button>
 </div>
 
 <div class="popup" id="popupFinal">
-    <h3>You hate them right? Answer the final question</h3>
-    <p>What's the best food in the world? Clue: ends with "er"</p>
-    <input id="respuestaInput" type="text" placeholder="Write here..." style="padding:8px; width:92%; margin-top:10px;">
-    <div style="margin-top:10px;">
-        <button class="close-btn" onclick="verificarRespuesta()">Send Answer</button>
-    </div>
+    <h3>You hate them right? Answer the final question</h3>
+    <p>What's the best food in the world? Clue: ends with "er"</p>
+    <input id="respuestaInput" type="text" placeholder="Write here..." style="padding:8px; width:92%; margin-top:10px;">
+    <div style="margin-top:10px;">
+        <button class="close-btn" onclick="verificarRespuesta()">Send Answer</button>
+    </div>
 </div>
 
 <div class="popup" id="popupWin">
-    <h3>🎉 Congratulations! 🎉</h3>
-    <p>You managed to get rid of all the ads 😌</p>
-    <button class="close-btn" onclick="document.getElementById('popupWin').style.display='none'">✖ Close *for real*</button>
+    <h3>🎉 Congratulations! 🎉</h3>
+    <p>You managed to get rid of all the ads 😌</p>
+    <button class="close-btn" onclick="document.getElementById('popupWin').style.display='none'">✖ Close *for real*</button>
 </div>
 
 <script>
 /* ---------- NAV HAMBURGER ---------- */
 (function() {
-    const btn = document.getElementById('hamburger');
-    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('mobileMenu');
 
-    if (!btn || !menu) return;
+    if (!btn || !menu) return;
 
-    btn.addEventListener('click', () => {
-        const isActive = menu.classList.toggle('active');
-        btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-    });
+    btn.addEventListener('click', () => {
+        const isActive = menu.classList.toggle('active');
+        btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+    });
 
-    // Close the menu if the user clicks outside it 
-    document.addEventListener('click', (e) => {
-        if (!menu.classList.contains('active')) return;
-        const insideNav = e.target.closest('.site-nav');
-        if (!insideNav) menu.classList.remove('active');
-    });
+    // Close the menu if the user clicks outside it 
+    document.addEventListener('click', (e) => {
+        if (!menu.classList.contains('active')) return;
+        const insideNav = e.target.closest('.site-nav');
+        if (!insideNav) menu.classList.remove('active');
+    });
 
-    // Prevent the menu from being open if the viewport changes to desktop
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 700) { 
-            menu.classList.remove('active');
-            btn.setAttribute('aria-expanded', 'false');
-        }
-    });
+    // Prevent the menu from being open if the viewport changes to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 700) { 
+            menu.classList.remove('active');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+    });
 })();
 
 /* 🟢 POP UP CODES AND ANNOYING BEHAVIOURS 🟢 */
 /* ---------- POPUP BEHAVIOUR ---------- */
 const popups = [
-    document.getElementById("popup1"),
-    document.getElementById("popup2"),
-    document.getElementById("popup3"),
-    document.getElementById("popup4")
+    document.getElementById("popup1"),
+    document.getElementById("popup2"),
+    document.getElementById("popup3"),
+    document.getElementById("popup4")
 ];
 
 const overlay = document.getElementById("overlay");
@@ -370,56 +372,56 @@ const pageContent = document.getElementById("pageContent");
 
 /* helper: places the original pop up in a random position (inside the margin) */
 function movePopupRandom(popup) {
-    const x = Math.random() * 70 + 15; // 15% - 85%
-    const y = Math.random() * 60 + 15; // 15% - 75%
-    popup.style.left = x + "%";
-    popup.style.top = y + "%";
-    popup.style.transform = "translate(-50%, -50%)";
+    const x = Math.random() * 70 + 15; // 15% - 85%
+    const y = Math.random() * 60 + 15; // 15% - 75%
+    popup.style.left = x + "%";
+    popup.style.top = y + "%";
+    popup.style.transform = "translate(-50%, -50%)";
 }
 
 /* helper: it creates a clon of the original pop up */
 function duplicatePopup(original) {
-    const clone = original.cloneNode(true);
-    clone.id = "clone-" + Math.random().toString(36).slice(2,9);
-    clone.style.display = "block";
-    document.body.appendChild(clone);
+    const clone = original.cloneNode(true);
+    clone.id = "clone-" + Math.random().toString(36).slice(2,9);
+    clone.style.display = "block";
+    document.body.appendChild(clone);
 
-    // add event to the cloned button(s) so they keep duplicating
-    const btn = clone.querySelector(".chaos-btn");
-    if (btn) {
-        btn.addEventListener("click", () => {
-            movePopupRandom(clone);
-            duplicatePopup(clone);
-        });
-    }
+    // add event to the cloned button(s) so they keep duplicating
+    const btn = clone.querySelector(".chaos-btn");
+    if (btn) {
+        btn.addEventListener("click", () => {
+            movePopupRandom(clone);
+            duplicatePopup(clone);
+        });
+    }
 
-    // give random pos
-    movePopupRandom(clone);
-    return clone;
+    // give random pos
+    movePopupRandom(clone);
+    return clone;
 }
 
 /* behavior for initial chaos buttons (original popups) */
 function wireChaosButtons() {
-    document.querySelectorAll(".popup .chaos-btn").forEach(btn => {
-        // remove existing handlers to avoid double-binding
-        btn.replaceWith(btn.cloneNode(true));
-    });
+    document.querySelectorAll(".popup .chaos-btn").forEach(btn => {
+        // remove existing handlers to avoid double-binding
+        btn.replaceWith(btn.cloneNode(true));
+    });
 
-    // Re-select after replacement
-    document.querySelectorAll(".popup .chaos-btn").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            const popup = e.target.closest(".popup");
-            // move original
-            movePopupRandom(popup);
-            // duplicate it (and show)
-            duplicatePopup(popup);
-            // tiny visual feedback
-            popup.animate(
-                [{ transform: "scale(1)" }, { transform: "scale(1.06)" }, { transform: "scale(1)" }],
-                { duration: 160 }
-            );
-        });
-    });
+    // Re-select after replacement
+    document.querySelectorAll(".popup .chaos-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            const popup = e.target.closest(".popup");
+            // move original
+            movePopupRandom(popup);
+            // duplicate it (and show)
+            duplicatePopup(popup);
+            // tiny visual feedback
+            popup.animate(
+                [{ transform: "scale(1)" }, { transform: "scale(1.06)" }, { transform: "scale(1)" }],
+                { duration: 160 }
+            );
+        });
+    });
 }
 
 /* Showing pop ups in sequency (Start of action) */
@@ -433,42 +435,42 @@ setTimeout(() => wireChaosButtons(), 1250);
 
 /* ---------- POPUP FINAL (it appears and it blurs the background) ---------- */
 function showFinalQuestionAfter(delayMs = 20000) {
-    setTimeout(() => {
-        // show overlay + blur everything except popups
-        overlay.style.display = 'block';
-        pageContent.classList.add('blur-all');
+    setTimeout(() => {
+        // show overlay + blur everything except popups
+        overlay.style.display = 'block';
+        pageContent.classList.add('blur-all');
 
-        // show final pop up  
-        const final = document.getElementById("popupFinal");
-        final.style.display = 'block';
-        final.style.left = '50%';
-        final.style.top = '50%';
-        final.style.transform = 'translate(-50%, -50%)';
-    }, delayMs);
+        // show final pop up  
+        const final = document.getElementById("popupFinal");
+        final.style.display = 'block';
+        final.style.left = '50%';
+        final.style.top = '50%';
+        final.style.transform = 'translate(-50%, -50%)';
+    }, delayMs);
 }
 showFinalQuestionAfter(20000); // SHOWS AFTER 20 SECONDS 
 
 /* ---------- VERIFY ANSWER ---------- */
 function verificarRespuesta() {
-    const correcta = "hamburger"; // <-- CHANGE THE RIGHT QUESTION HERE
-    const usuario = document.getElementById("respuestaInput").value.trim().toLowerCase();
+    const correcta = "hamburger"; // <-- CHANGE THE RIGHT QUESTION HERE
+    const usuario = document.getElementById("respuestaInput").value.trim().toLowerCase();
 
-    if (usuario === correcta) {
-        // hide overlay + remove blur
-        overlay.style.display = 'none';
-        pageContent.classList.remove('blur-all');
+    if (usuario === correcta) {
+        // hide overlay + remove blur
+        overlay.style.display = 'none';
+        pageContent.classList.remove('blur-all');
 
-        // hide all existing .popup (including clones)
-        document.querySelectorAll(".popup").forEach(p => p.style.display = 'none');
+        // hide all existing .popup (including clones)
+        document.querySelectorAll(".popup").forEach(p => p.style.display = 'none');
 
-        // show win popup
-        document.getElementById("popupWin").style.display = 'block';
-        document.getElementById("popupWin").style.left = '50%';
-        document.getElementById("popupWin").style.top = '50%';
-    } else {
-        // feedback
-        alert("Wrong answer! Try again 😅");
-    }
+        // show win popup
+        document.getElementById("popupWin").style.display = 'block';
+        document.getElementById("popupWin").style.left = '50%';
+        document.getElementById("popupWin").style.top = '50%';
+    } else {
+        // feedback
+        alert("Wrong answer! Try again 😅");
+    }
 }
 </script>
 
