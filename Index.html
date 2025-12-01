@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Customer's Worst Nightmare</title>
+    
+    <style>
+        /* Aplicar fuentes */
+        body {
+            /* Fuente legible y moderna para el cuerpo de texto */
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3 {
+            /* Fuente impactante y fuerte para títulos */
+            font-family: 'Oswald', sans-serif;
+            /* Pequeño espacio para títulos grandes */
+            letter-spacing: 0.5px;
+        }
+        
+        /* 3. BORDES SUAVIZADOS Y SOMBRAS COOL */
+        
+        /* Imagen principal (Moodboard) */
+        header img {
+            border-radius: 15px; /* Bordes suaves */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra flotante sutil */
+            margin-bottom: 30px;
+            /* Aseguramos que la imagen no sea más grande que el contenedor */
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Wrapper con más espacio (para que respire) */
+        .wrapper {
+            padding: 40px 20px; /* Aumentamos el padding superior/inferior */
+        }
+        
+        /* Líneas de separación sutiles entre secciones */
+        main h3 {
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            margin-top: 35px;
+            color: #ff5f9e; /* Usamos el color de acento del gradiente */
+        }
+        
+        /* Estilo al título principal */
+        header h1 {
+            color: #8a4fff; /* Color morado fuerte de tu gradiente */
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+        }
+        header h2 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="logo">😁 Index </div>
+
+    <button class="hamburger" id="hamburger" aria-expanded="false">☰</button>
+
+    <div class="links" id="mobileMenu">
+        <a href="Index.html">Index</a>
+        <a href="Pop_Ups.html">Pop Ups</a>
+        <a href="Watch_It!.html">Watch It!</a>
+    </div>
+</nav>
+
+<div class="wrapper">
+
+    <header style="text-align: center;"> <img src="moodboard computation final.jpg" alt="Project moodboard">
+        <h1>Customer's Worst Nightmare</h1>
+        <h2>Trouble with ads navigating?</h2>
+    </header>
+
+    <main>
+        <h3>What is this project about?</h3>
+        <p>
+            The objective is to make the user feel pain by having to deal with ads. Watching videos on YouTube 
+            is a huge pain if you're not using ad blockers or YouTube Premium.
+        </p>
+
+        <h3>Problem?</h3>
+        <p>
+            Most of the time, if you're in a rush or in class presenting a video, ads turn into something funny… 
+            or in other cases, it makes you ANGRY!
+        </p>
+
+        <p>We encourage the user to click the **"Watch It!"** section.</p>
+    </main>
+
+    <footer style="margin-top: 60px; text-align: center;"> <small>
+            <em>
+                This website was created as part of the final project. <br>
+                All content and designs are © Miguel Rueda, 2025.
+            </em>
+        </small>
+    </footer>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Get the key elements of the DOM
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    // 2. Ensure that both elements exist before adding events
+    if (hamburger && mobileMenu) {
+        // Handling the hamburger button click
+        hamburger.addEventListener("click", () => {
+            const isActive = mobileMenu.classList.toggle("active");
+            // Update accessibility status
+            hamburger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+        });
+
+        // 3. Close when the user clicks outside the menu
+        document.addEventListener("click", (e) => {
+            // Si el menú está activo Y el clic NO fue dentro de la barra de navegación
+            if (mobileMenu.classList.contains("active") && !e.target.closest(".site-nav")) {
+                mobileMenu.classList.remove("active");
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // 4. Close on resize (if the user goes to desktop)
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 700) {
+                if (mobileMenu.classList.contains("active")) {
+                    mobileMenu.classList.remove("active");
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>
